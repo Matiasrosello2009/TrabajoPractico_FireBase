@@ -40,5 +40,22 @@ estadoSuelo = "Estable";
 estadoSuelo = "Exceso de agua";
 }
 
+let cambiarColorTemperatura = function(temperaturaSuelo) {
+  let tarjeta = document.querySelector(".contenedor");
+
+  tarjeta.classList.remove("color-baja");
+  tarjeta.classList.remove("color-ideal");
+  tarjeta.classList.remove("color-alta");
+
+  if (temperatura < 10) {
+    tarjeta.classList.add("color-baja");
+  } else if (temperatura >= 10 && temperatura <= 25) {
+    tarjeta.classList.add("color-ideal");
+  } else {
+    tarjeta.classList.add("color-alta");
+  }
+};
+cambiarColorTemperatura(temperatura);
+
 textoEstado.innerHTML = estadoSuelo;
 });
