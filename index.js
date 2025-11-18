@@ -13,19 +13,22 @@ import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/12
 
 let app = initializeApp(configFirebase);
 let base = getDatabase(app);
-let referencia = ref(base, "sensores/");
+let referencia = ref(base, "datos");
 
 onValue(referencia, function(datos) {
 let info = datos.val();
-let temperaturaSuelo = info.temperatura;
-let humedadSuelo = info.humedad;
+let temperatura = info.temperatura;
+let humedadSuelo = info.humedadSuelo;
+let humedadAire = info.humedadAire;
 
 let textoTemp = document.querySelector("#temperatura");
 let textoHum = document.querySelector("#humedad");
+let textoAir = document.querySelector("#aire");
 let textoEstado = document.querySelector("#estado");
 
-textoTemp.innerHTML = "Temperatura del suelo: " + temperaturaSuelo + "°C";
+textoTemp.innerHTML = "Temperatura : " + temperatura + "°C";
 textoHum.innerHTML = "Humedad del suelo: " + humedadSuelo + "%";
+textoAir.innerHTML = "Humedad del aire: " + humedadAire + "%";
 
 let estadoSuelo = "";
 

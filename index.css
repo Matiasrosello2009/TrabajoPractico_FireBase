@@ -1,12 +1,11 @@
 body {
 font-family: Arial;
-background: #f2f2f2;
-padding: 20px;
+background: #80966e;
+padding: 40px;
 }
 
-
 .contenedor {
-background: white;
+background: rgb(185, 197, 174);
 padding: 20px;
 border-radius: 12px;
 width: 300px;
@@ -14,14 +13,18 @@ margin: auto;
 text-align: center;
 }
 
-
 .dato {
-font-size: 22px;
+font-size: 30px;
 margin: 10px 0;
 }
-
 
 .estado {
 font-size: 20px;
 font-weight: bold;
 }
+
+.contenedor:hover{
+    background: #fafdf4;
+    color: rgb(64, 77, 32);
+    transform: scale(1.07);
+  }
