@@ -20,7 +20,6 @@ let info = datos.val();
 let temperatura = info.temperatura;
 let humedadSuelo = info.humedadSuelo;
 let humedadAire = info.humedadAire;
-
 let textoTemp = document.querySelector("#temperatura");
 let textoHum = document.querySelector("#humedad");
 let textoAir = document.querySelector("#aire");
@@ -31,21 +30,19 @@ textoHum.innerHTML = "Humedad del suelo: " + humedadSuelo + "%";
 textoAir.innerHTML = "Humedad del aire: " + humedadAire + "%";
 
 let estadoSuelo = "";
-
-if (humedadSuelo < 40) {
-estadoSuelo = "Regar ahora";
-} else if (humedadSuelo >= 40 && humedadSuelo <= 70) {
-estadoSuelo = "Estable";
-} else {
-estadoSuelo = "Exceso de agua";
-}
+  if (humedadSuelo < 40) {
+    estadoSuelo = "Regar ahora";
+  } else if (humedadSuelo >= 40 && humedadSuelo <= 70) {
+    estadoSuelo = "Estable";
+  } else {
+    estadoSuelo = "Exceso de agua";
+  }
 
 let cambiarColorTemperatura = function(temperatura) {
-  let tarjeta = document.querySelector(".contenedor");
-
-  tarjeta.classList.remove("color-baja");
-  tarjeta.classList.remove("color-ideal");
-  tarjeta.classList.remove("color-alta");
+let tarjeta = document.querySelector(".contenedor");
+tarjeta.classList.remove("color-baja");
+tarjeta.classList.remove("color-ideal");
+tarjeta.classList.remove("color-alta");
 
   if (temperatura < 10) {
     tarjeta.classList.add("color-baja");
@@ -56,6 +53,5 @@ let cambiarColorTemperatura = function(temperatura) {
   }
 };
 cambiarColorTemperatura(temperatura);
-
 textoEstado.innerHTML = estadoSuelo;
 });
