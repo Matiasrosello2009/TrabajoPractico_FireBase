@@ -40,7 +40,7 @@ estadoSuelo = "Estable";
 estadoSuelo = "Exceso de agua";
 }
 
-let cambiarColorTemperatura = function(temperaturaSuelo) {
+let cambiarColorTemperatura = function(temperatura) {
   let tarjeta = document.querySelector(".contenedor");
 
   tarjeta.classList.remove("color-baja");
